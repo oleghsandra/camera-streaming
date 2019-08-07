@@ -13,11 +13,12 @@ process.on('uncaughtException', function(err) {
   const leds = new Blinkt();
   leds.setup();
   
+
   leds.setAllPixels(255, 255, 255, 1);
   leds.sendUpdate();
   setTimeout(updateLeds, 1000);
   
-  app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
+  app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
   
   app.ws('/video-stream', (ws, req) => {
       console.log('Client connected');
