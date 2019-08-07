@@ -24,13 +24,9 @@ process.on('uncaughtException', function(err) {
       console.log('Client connected');
       updateLeds();
   
-      ws.send(JSON.stringify({
-        action: 'init',
-        width: '400',
-        height: '240'
-      }));
+      ws.send();
   
-      var videoStream = raspividStream({ rotation: 180 });
+      var videoStream = raspividStream({ rotation: 0 });
   
       videoStream.on('data', (data) => {
           ws.send(data, { binary: true }, (error) => { if (error) console.error(error); });
