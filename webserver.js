@@ -64,4 +64,4 @@ process.on('uncaughtException', function(err) {
     next(err);
   })
   
-  app.listen(80, () => console.log('Server started on 80'));
+  app.listen(8182, () => console.log('Server started on 8182'));
