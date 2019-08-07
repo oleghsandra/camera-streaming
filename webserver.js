@@ -26,8 +26,8 @@ process.on('uncaughtException', function(err) {
   
       ws.send(JSON.stringify({
         action: 'init',
-        width: '960',
-        height: '540'
+        width: '400',
+        height: '240'
       }));
   
       var videoStream = raspividStream({ rotation: 180 });
